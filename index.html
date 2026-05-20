@@ -488,7 +488,7 @@ body{
 
         <div class="header-title">
             <h1>Tablero Institucional</h1>
-            <span>Facultad de Nivel Superior</span>
+            <span>Secretaría de Docencia-FCAeI</span>
         </div>
 
     </div>
@@ -502,8 +502,25 @@ body{
         >
 
         <div class="user-info">
-            <strong>Administración Académica</strong><br>
-            20 Mayo 2026
+            <strong>Secretaría de Docencia</strong><br>
+            <!-- El contenedor donde se mostrará la fecha -->
+            <p>Hoy es: <span id="fecha-actual"></span></p>
+        
+            <!-- Script para actualizar la fecha -->
+            <script>
+                // Obtiene la fecha actual del sistema
+                const hoy = new Date();
+                
+                // Formatea la fecha (ejemplo: 20/05/2026)
+                const formatoFecha = hoy.toLocaleDateString('es-ES', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+        
+                // Inserta la fecha dentro del elemento span
+                document.getElementById('fecha-actual').textContent = formatoFecha;
+            </script>
         </div>
 
     </div>
