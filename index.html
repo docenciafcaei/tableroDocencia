@@ -1,0 +1,676 @@
+<!-- 
+VERSIÓN AZUL INSTITUCIONAL UAEM
+Solo reemplaza la sección :root de tu código anterior
+o utiliza este archivo completo.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tablero Institucional UAEM</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+    /* =========================
+       PALETA AZUL INSTITUCIONAL
+    ========================= */
+
+    --azul-uaem:#003B70;
+    --azul-secundario:#0B4F8A;
+    --azul-hover:#1D5FA7;
+    --azul-claro:#EAF2FB;
+
+    --dorado:#C8A96B;
+
+    --gris-fondo:#F4F6F8;
+    --gris-panel:#FFFFFF;
+    --gris-texto:#2D3748;
+    --gris-linea:#E2E8F0;
+
+    --blanco:#FFFFFF;
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--gris-fondo);
+    color:var(--gris-texto);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    width:100%;
+    height:78px;
+    background:linear-gradient(
+        90deg,
+        var(--azul-uaem),
+        var(--azul-secundario)
+    );
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--azul-uaem);
+
+    font-weight:700;
+    font-size:18px;
+}
+
+.header-title h1{
+    font-size:21px;
+    font-weight:700;
+}
+
+.header-title span{
+    font-size:13px;
+    opacity:.9;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.search-box{
+    width:300px;
+    padding:11px 16px;
+
+    border:none;
+    outline:none;
+
+    border-radius:12px;
+
+    background:white;
+    color:#4A5568;
+
+    font-size:14px;
+}
+
+.user-info{
+    text-align:right;
+    font-size:14px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container{
+    display:flex;
+    min-height:calc(100vh - 78px);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    width:260px;
+    background:var(--azul-uaem);
+    color:white;
+    padding:25px 0;
+}
+
+.menu-title{
+    padding:0 25px 10px;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    opacity:.7;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:4px;
+}
+
+.menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:15px 25px;
+
+    color:white;
+    text-decoration:none;
+
+    transition:.25s;
+
+    font-size:15px;
+}
+
+.menu a:hover{
+    background:var(--azul-hover);
+}
+
+.menu a.active{
+    background:var(--azul-hover);
+    border-left:4px solid var(--dorado);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+/* =========================
+   TOP CARDS
+========================= */
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    margin-bottom:35px;
+}
+
+.card{
+    background:var(--gris-panel);
+
+    border-radius:20px;
+
+    padding:24px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+
+    transition:.25s;
+
+    border-top:5px solid var(--azul-uaem);
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card-title{
+    font-size:14px;
+    color:#718096;
+    margin-bottom:15px;
+}
+
+.card-value{
+    font-size:34px;
+    font-weight:700;
+    color:var(--azul-uaem);
+}
+
+.card-footer{
+    margin-top:10px;
+    font-size:13px;
+    color:#718096;
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title{
+    font-size:24px;
+    margin-bottom:22px;
+    color:var(--azul-uaem);
+    font-weight:700;
+}
+
+/* =========================
+   QUICK ACCESS
+========================= */
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+    margin-bottom:35px;
+}
+
+.quick-card{
+    background:white;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    box-shadow:0 5px 16px rgba(0,0,0,.05);
+
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+
+    transition:.25s;
+}
+
+.quick-card:hover{
+    transform:translateY(-4px);
+}
+
+.quick-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:16px;
+
+    background:var(--azul-claro);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:26px;
+}
+
+.quick-card h3{
+    font-size:17px;
+    color:var(--azul-uaem);
+}
+
+.quick-card p{
+    font-size:14px;
+    color:#718096;
+    line-height:1.5;
+}
+
+.quick-card a{
+    width:max-content;
+
+    text-decoration:none;
+
+    background:var(--azul-uaem);
+    color:white;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    transition:.25s;
+}
+
+.quick-card a:hover{
+    background:var(--azul-hover);
+}
+
+/* =========================
+   BOTTOM GRID
+========================= */
+
+.bottom-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+.panel{
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 5px 16px rgba(0,0,0,.05);
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-item{
+    padding:16px 0;
+    border-bottom:1px solid var(--gris-linea);
+}
+
+.news-item:last-child{
+    border-bottom:none;
+}
+
+.news-date{
+    font-size:12px;
+    color:#718096;
+    margin-bottom:6px;
+}
+
+.news-title{
+    font-weight:600;
+    color:var(--azul-uaem);
+    margin-bottom:5px;
+}
+
+.news-text{
+    font-size:14px;
+    color:#4A5568;
+}
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar-item{
+    display:flex;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.calendar-date{
+    min-width:62px;
+    height:62px;
+
+    border-radius:16px;
+
+    background:var(--azul-uaem);
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+}
+
+.calendar-date span{
+    font-size:12px;
+}
+
+.calendar-info h4{
+    font-size:15px;
+    color:var(--azul-uaem);
+    margin-bottom:5px;
+}
+
+.calendar-info p{
+    font-size:13px;
+    color:#718096;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .bottom-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .header{
+        height:auto;
+        padding:20px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .header-right{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+    .main{
+        padding:20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-left">
+
+        <div class="logo">
+            UA
+        </div>
+
+        <div class="header-title">
+            <h1>Tablero Institucional</h1>
+            <span>Facultad de Nivel Superior</span>
+        </div>
+
+    </div>
+
+    <div class="header-right">
+
+        <input 
+            type="text" 
+            class="search-box"
+            placeholder="Buscar información..."
+        >
+
+        <div class="user-info">
+            <strong>Administración Académica</strong><br>
+            20 Mayo 2026
+        </div>
+
+    </div>
+
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="menu-title">
+            Navegación
+        </div>
+
+        <ul class="menu">
+
+            <li><a href="#" class="active">🏠 Inicio</a></li>
+            <li><a href="#">🎓 Académico</a></li>
+            <li><a href="#">📁 Administrativo</a></li>
+            <li><a href="#">👥 Recursos Humanos</a></li>
+            <li><a href="#">📊 Planeación</a></li>
+            <li><a href="#">📚 Normatividad</a></li>
+            <li><a href="#">🔗 Vinculación</a></li>
+            <li><a href="#">📈 Reportes</a></li>
+            <li><a href="#">🗂 Transparencia</a></li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main">
+
+        <section class="cards-grid">
+
+            <div class="card">
+                <div class="card-title">Matrícula Actual</div>
+                <div class="card-value">4,582</div>
+                <div class="card-footer">Periodo Enero-Junio 2026</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Docentes Activos</div>
+                <div class="card-value">214</div>
+                <div class="card-footer">Actualización diaria</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Convocatorias</div>
+                <div class="card-value">12</div>
+                <div class="card-footer">5 nuevas esta semana</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Pendientes</div>
+                <div class="card-value">28</div>
+                <div class="card-footer">Revisión institucional</div>
+            </div>
+
+        </section>
+
+        <h2 class="section-title">
+            Accesos rápidos
+        </h2>
+
+        <section class="quick-grid">
+
+            <div class="quick-card">
+                <div class="quick-icon">📅</div>
+                <h3>Calendario Escolar</h3>
+                <p>Consulta fechas y periodos académicos.</p>
+                <a href="#">Abrir</a>
+            </div>
+
+            <div class="quick-card">
+                <div class="quick-icon">📂</div>
+                <h3>Drive Institucional</h3>
+                <p>Acceso a carpetas y documentos.</p>
+                <a href="#">Ingresar</a>
+            </div>
+
+            <div class="quick-card">
+                <div class="quick-icon">📑</div>
+                <h3>Formatos Oficiales</h3>
+                <p>Plantillas institucionales autorizadas.</p>
+                <a href="#">Descargar</a>
+            </div>
+
+            <div class="quick-card">
+                <div class="quick-icon">📊</div>
+                <h3>Indicadores</h3>
+                <p>Dashboard institucional y métricas.</p>
+                <a href="#">Consultar</a>
+            </div>
+
+        </section>
+
+        <section class="bottom-grid">
+
+            <div class="panel">
+
+                <h2 class="section-title">
+                    Avisos institucionales
+                </h2>
+
+                <div class="news-item">
+                    <div class="news-date">20 Mayo 2026</div>
+                    <div class="news-title">
+                        Actualización de formatos administrativos
+                    </div>
+                    <div class="news-text">
+                        Ya se encuentran disponibles los nuevos documentos oficiales.
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-date">18 Mayo 2026</div>
+                    <div class="news-title">
+                        Reunión de coordinadores académicos
+                    </div>
+                    <div class="news-text">
+                        La sesión se realizará el viernes a las 10:00 hrs.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <h2 class="section-title">
+                    Próximos eventos
+                </h2>
+
+                <div class="calendar-item">
+
+                    <div class="calendar-date">
+                        25
+                        <span>MAY</span>
+                    </div>
+
+                    <div class="calendar-info">
+                        <h4>Consejo Técnico</h4>
+                        <p>10:00 hrs</p>
+                    </div>
+
+                </div>
+
+                <div class="calendar-item">
+
+                    <div class="calendar-date">
+                        28
+                        <span>MAY</span>
+                    </div>
+
+                    <div class="calendar-info">
+                        <h4>Entrega de Informes</h4>
+                        <p>Fecha límite</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
