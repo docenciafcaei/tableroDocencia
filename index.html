@@ -13,7 +13,14 @@ o utiliza este archivo completo.
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+function popitup(url)
+{
+	newwindow=window.open(url,'name','height=200,width=600'); 
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+</SCRIPT>
 <style>
 
 :root{
@@ -612,7 +619,7 @@ body{
                 <div class="quick-icon">📑</div>
                 <h3>Formatos Oficiales</h3>
                 <p>Plantillas institucionales autorizadas.</p>
-                <a href="#">Descargar</a>
+                <a href="https://personal.uaem.mx/formatos/" onClick="return popitup('https://personal.uaem.mx/formatos/')">Ver</a>
             </div>
 
         </section>
